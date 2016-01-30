@@ -4,6 +4,22 @@ html, body
     margin: 0;
 }
 
+html
+{
+    font-family: Helvetica;
+}
+
+body
+{
+    background: url("/app/site/themes/default/src/bg_main.jpg") no-repeat fixed;
+}
+
+header
+{
+    color: #ffffff;
+    text-align: center;
+}
+
 .center-wrap
 {
     margin: 0 auto;
@@ -12,4 +28,9 @@ html, body
 .big
 {
     width: 960px;
+}
+
+.logo-text
+{
+    font-size: 8em;
 }

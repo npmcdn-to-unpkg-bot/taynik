@@ -25,11 +25,11 @@ class Config {
 
             'db' => array(
                 'db_host'    => '127.0.0.1',
-                'db_name'    => 'smessage',
+                'db_name'    => 'tainyk',
                 'db_login'   => 'root',
                 'db_pass'    => 'root',
                 'db_charset' => 'utf8',
-                'db_prefix'  => 'smes_'
+                'db_prefix'  => 'tnk_'
             ),
 
             'routes' => array(
