@@ -33,4 +33,6 @@ header
 .logo-text
 {
     font-size: 8em;
+    display: inline-block;
+    margin: 40px 0 0;
 }
