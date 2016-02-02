@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'BravoRG';
+    src: url(/app/site/themes/default/fonts/BravoRG.otf);
+}
+
+@font-face {
+    font-family: 'Measure';
+    src: url(/app/site/themes/default/fonts/Measure.otf);
+}
+
 html, body
 {
     padding: 0;
@@ -7,11 +17,15 @@ html, body
 html
 {
     font-family: Helvetica;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
 }
 
 body
 {
     background: url("/app/site/themes/default/src/bg_main.jpg") no-repeat fixed;
+    background-size: 100%;
 }
 
 header
@@ -32,7 +46,70 @@ header
 
 .logo-text
 {
-    font-size: 8em;
+    font-size: 14em;
     display: inline-block;
     margin: 40px 0 0;
+    font-family: BravoRG;
+    padding: 0 40px;
+    border: 14px solid #ffffff;
 }
+
+.slogan-text
+{
+    font-family: BravoRG;
+    font-size: 1.8em;
+    letter-spacing: 2px;
+}
+
+/* clearfix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.grid-item { width: 200px; }
+
+/*******Карточки********/
+#cards-conteiner
+{
+    width: 1280px;
+    margin: 20px auto;
+}
+
+.card {
+    margin: 10px;
+    width: 300px;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #313743;
+    box-shadow: 0 0 6px #020301;
+    float: left;
+}
+
+.card:nth-child(odd) > .card-main
+{
+    color: #39a7d7;
+}
+
+.card-header
+{
+    background: #2d313c;
+    padding: 10px;
+    font-size: .7em;
+    text-align: right;
+}
+
+.card-main
+{
+    padding: 10px;
+    font-size: 1em;
+    color: #55c94c;
+    font-family: Measure;
+    text-align: justify;
+    letter-spacing: 1px;
+
+}
+
+
+/***********************/
