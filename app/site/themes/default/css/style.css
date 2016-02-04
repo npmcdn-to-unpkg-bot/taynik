@@ -17,20 +17,19 @@ html, body
 html
 {
     font-family: Helvetica;
-    color: #ffffff;
+    color: #676a76;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
 }
 
 body
 {
-    background: url("/app/site/themes/default/src/bg_main.jpg") no-repeat fixed;
+    /*background: url("/app/site/themes/default/src/bg_main.jpg") no-repeat fixed;*/
     background-size: 100%;
 }
 
 header
 {
-    color: #ffffff;
     text-align: center;
 }
 
@@ -51,7 +50,7 @@ header
     margin: 40px 0 0;
     font-family: BravoRG;
     padding: 0 40px;
-    border: 14px solid #ffffff;
+    border: 14px solid #676a76;
 }
 
 .slogan-text
@@ -79,11 +78,11 @@ header
 .card {
     margin: 10px;
     width: 300px;
-    color: #fff;
+    color: #676a76;
     overflow: hidden;
-    border-radius: 8px;
-    background: #313743;
-    box-shadow: 0 0 6px #020301;
+    /*border-radius: 8px;*/
+    background: #fff;
+    box-shadow: 0 0 15px #cfd0d4;
     float: left;
 }
 
@@ -94,22 +93,19 @@ header
 
 .card-header
 {
-    background: #2d313c;
+    /*background: linear-gradient(to bottom, #41243d, #5d3554);*/
     padding: 10px;
-    font-size: .7em;
-    text-align: right;
+    font-size: .8em;
+    text-align: center;
 }
 
 .card-main
 {
-    padding: 10px;
-    font-size: 1em;
-    color: #55c94c;
-    font-family: Measure;
+    padding: 20px;
+    font-size: .7em;
+    /*color: #FFF;*/
     text-align: justify;
     letter-spacing: 1px;
-
+    /*background: radial-gradient(#583745, #41243d);*/
 }
-
-
 /***********************/
