@@ -51,6 +51,7 @@ header
     font-family: BravoRG;
     padding: 0 40px;
     border: 14px solid #676a76;
+    cursor: default;
 }
 
 .slogan-text
@@ -58,7 +59,106 @@ header
     font-family: BravoRG;
     font-size: 1.8em;
     letter-spacing: 2px;
+    cursor: default;
 }
+
+/*Секция отправки сообщения*/
+h4
+{
+    font-weight: normal;
+    font-size: 1em;
+    margin: 10px 10px 5px;
+    cursor: default;
+}
+
+.vertical-input
+{
+    display: block;
+    max-width: 400px;
+    min-width: 400px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #676a76;
+}
+
+#send-container
+{
+    width: 460px;
+    position: relative;
+    margin: 10px auto;
+}
+
+#send-wrapper
+{
+    width: 440px;
+    padding: 10px;
+    box-shadow: 0 0 15px #676a76;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: -200px;
+    z-index: 999;
+    background: #fff;
+}
+
+#send-wrapper textarea
+{
+    min-height: 100px;
+    max-height: 200px;
+}
+
+#send-wrapper label
+{
+    font-size: .8em;
+}
+
+#send-wrapper label>input
+{
+    margin: 5px;
+}
+
+.note-text
+{
+    font-size: .8em;
+}
+
+.btn
+{
+    padding: 10px 40px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    background: #f75b40;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    transition: .3s;
+    display: inline-block;
+}
+
+.btn:hover
+{
+    background: #3198cd;
+}
+
+#btn-open-send
+{
+    display: inline-block;
+    padding: 10px 40px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    background: #f75b40;
+    border: none;
+    color: #fff;
+    transition: .3s;
+}
+
+#btn-open-send:hover
+{
+    background: #3198cd;
+}
+/**************************/
 
 /* clearfix */
 .grid:after {
@@ -84,6 +184,7 @@ header
     background: #fff;
     box-shadow: 0 0 15px #cfd0d4;
     float: left;
+    cursor: default;
 }
 
 .card:nth-child(odd) > .card-main
@@ -102,10 +203,11 @@ header
 .card-main
 {
     padding: 20px;
-    font-size: .7em;
+    font-size: .8em;
     /*color: #FFF;*/
     text-align: justify;
     letter-spacing: 1px;
     /*background: radial-gradient(#583745, #41243d);*/
+    font: italic normal normal 14px/1.2em droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
 }
 /***********************/
