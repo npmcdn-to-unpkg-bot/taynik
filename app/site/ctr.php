@@ -2,6 +2,7 @@
 
 namespace app\site;
 
+use app\site\modules\card\Card;
 use system\core\Controller;
 
 class Ctr extends Controller {
@@ -11,9 +12,7 @@ class Ctr extends Controller {
 
         if ($_SERVER['REQUEST_METHOD'] == "POST")
         {
-
-            var_dump($_POST);
-
+            Card::createCard($_POST);
         }
 
         $content = \app\site\modules\card\Controller::showListCard();

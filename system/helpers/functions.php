@@ -80,4 +80,22 @@ class Functions {
 
     }
 
+    /**
+     * @return string
+     *
+     * Функция получения IP пользователя
+     *
+     */
+    public static function get_IP_address()
+    {
+        $ip = getenv('HTTP_CLIENT_IP')?:
+            getenv('HTTP_X_FORWARDED_FOR')?:
+                getenv('HTTP_X_FORWARDED')?:
+                    getenv('HTTP_FORWARDED_FOR')?:
+                        getenv('HTTP_FORWARDED')?:
+                            getenv('REMOTE_ADDR');
+
+        return $ip;
+    }
+
 } 

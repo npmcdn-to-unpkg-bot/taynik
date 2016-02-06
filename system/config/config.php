@@ -42,6 +42,10 @@ class Config {
                 'keywords'    => 'keywords meta'
             ),
 
+            'cards' => array(
+                'count_main'  => 20
+            )
+
         );
 
         Settings::add($this->conf);

@@ -3,12 +3,14 @@
 namespace app\site\modules\card;
 
 
+use system\helpers\Settings;
+
 class Controller
 {
 
     public static function showListCard ()
     {
-        $list = Card::getListCard(0, 10);
+        $list = Card::getListCard(0, Settings::get('cards', 'count_main'));
 
         ob_start();
 
