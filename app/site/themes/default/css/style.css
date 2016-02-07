@@ -211,4 +211,27 @@ h4
     /*background: radial-gradient(#583745, #41243d);*/
     font: italic normal normal 14px/1.2em droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
 }
+
+.card-big
+{
+    width: 400px;
+    border: 6px solid #676a76;
+    margin: 20px auto;
+}
+
+.card-big-text
+{
+    padding: 20px;
+    font: italic normal normal 18px/1.2em droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
+    text-align: justify;
+}
+
+.card-big-header
+{
+    background: #676a76;
+    color: #fff;
+    padding: 10px;
+    font-family: BravoRG;
+    letter-spacing: 2px;
+}
 /***********************/

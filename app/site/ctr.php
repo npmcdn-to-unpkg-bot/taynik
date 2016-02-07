@@ -17,7 +17,7 @@ class Ctr extends Controller {
             Card::createCard($_POST);
         }
 
-        if (isset($_GET['h']))
+        if (isset($_GET['card']))
         {
             $content = \app\site\modules\card\Controller::showCard($_GET['card']);
         }
