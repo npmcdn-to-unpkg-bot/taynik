@@ -96,7 +96,7 @@ h4
     display: none;
     position: absolute;
     left: 0;
-    top: -200px;
+    top: -400px;
     z-index: 999;
     background: #fff;
 }
@@ -177,14 +177,15 @@ h4
 
 .card {
     margin: 10px;
-    width: 300px;
+    width: 288px;
     color: #676a76;
     overflow: hidden;
     /*border-radius: 8px;*/
     background: #fff;
-    box-shadow: 0 0 15px #cfd0d4;
+    box-shadow: 0 0 15px #676a76;
     float: left;
     cursor: default;
+    border: 6px solid #676a76;
 }
 
 .card:nth-child(odd) > .card-main

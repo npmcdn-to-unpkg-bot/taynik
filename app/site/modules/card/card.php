@@ -7,9 +7,9 @@ use system\helpers\Functions;
 class Card
 {
 
-    public static function getCard ($id, $start, $limit)
+    public static function getCard ($hash)
     {
-
+        return Db::select('message', array('_hash' => $hash));
     }
 
     public static function getListCard ($start, $limit)

@@ -26,8 +26,8 @@ class Config {
             'db' => array(
                 'db_host'    => '127.0.0.1',
                 'db_name'    => 'tainyk',
-                'db_login'   => 'root',
-                'db_pass'    => 'root',
+                'db_login'   => 'Max',
+                'db_pass'    => '111',
                 'db_charset' => 'utf8',
                 'db_prefix'  => 'tnk_'
             ),

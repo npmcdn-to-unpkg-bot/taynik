@@ -10,12 +10,17 @@ class Ctr extends Controller {
     function index ()
     {
 
+        $content = \app\site\modules\card\Controller::showListCard();
+
         if ($_SERVER['REQUEST_METHOD'] == "POST")
         {
             Card::createCard($_POST);
         }
 
-        $content = \app\site\modules\card\Controller::showListCard();
+        if (isset($_GET['h']))
+        {
+            $content = \app\site\modules\card\Controller::showCard($_GET['card']);
+        }
 
         $this->view->generate(THEME . 'template.html', $content, $this->data);
 

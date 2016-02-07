@@ -20,4 +20,15 @@ class Controller
 
     }
 
+    public  static function showCard ($hash)
+    {
+        $card = Card::getCard($hash);
+
+        ob_start();
+
+        require_once MODULES . "card" . DIR_SEP . "html" . DIR_SEP . "card.html";
+
+        return ob_get_clean();
+    }
+
 }
