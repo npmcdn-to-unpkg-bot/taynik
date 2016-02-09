@@ -60,7 +60,11 @@ class Card
             $data['_hash'] = $hash;
             $data['ip']    = Functions::get_IP_address();
 
-            return Db::insert('message', $data);
+            if (self::sendMail($data))
+            {
+                return Db::insert('message', $data);
+            }
+            else return false;
 
         }
         else return false;
@@ -68,7 +72,7 @@ class Card
     }
 
     //TODO Функция не проверена
-    private function sendMail ($data)
+    private static function sendMail ($data)
     {
 
         $link = PROTOCOL . $_SERVER['HTTP_HOST'] . "/card?card=" . $data['_hash'] . "&w=1";
