@@ -231,7 +231,13 @@ h4
     background: #676a76;
     color: #fff;
     padding: 10px;
-    font-family: BravoRG;
-    letter-spacing: 2px;
+    font-family: Helvetica;
+    font-size: .8em;
+    /*letter-spacing: 2px;*/
+}
+
+.card-big-header>.state
+{
+    float: right;
 }
 /***********************/

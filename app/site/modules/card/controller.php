@@ -20,9 +20,9 @@ class Controller
 
     }
 
-    public  static function showCard ($hash)
+    public  static function showCard ($hash, $who)
     {
-        $card = Card::getCard($hash);
+        $card = Card::getCard($hash, $who);
 
         ob_start();
 

@@ -3,13 +3,22 @@ namespace app\site\modules\card;
 
 use system\core\Db;
 use system\helpers\Functions;
+use system\helpers\SendMail;
 
 class Card
 {
 
-    public static function getCard ($hash)
+    public static function getCard ($hash, $who)
     {
-        return Db::select('message', array('_hash' => $hash));
+
+        $res = Db::select('message', array('_hash' => $hash));
+
+        if ($res[0]['reading'] == 0 && $who == 1)
+        {
+            Db::edit('message', array('_hash' => $hash), array('reading' => 1));
+        }
+
+        return $res;
     }
 
     public static function getListCard ($start, $limit)
@@ -55,6 +64,22 @@ class Card
 
         }
         else return false;
+
+    }
+
+    //TODO Функция не проверена
+    private function sendMail ($data)
+    {
+
+        $link = PROTOCOL . $_SERVER['HTTP_HOST'] . "/card?card=" . $data['_hash'] . "&w=1";
+
+        ob_start();
+
+        require MODULES . "card" . DIR_SEP . "html" . DIR_SEP . "card_mail.html";
+
+        $message = ob_get_clean();
+
+        return SendMail::send($data['receiver'], "анонимное сообщение", $message);
 
     }
 

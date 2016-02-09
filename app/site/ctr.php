@@ -10,17 +10,29 @@ class Ctr extends Controller {
     function index ()
     {
 
-        $content = \app\site\modules\card\Controller::showListCard();
-
         if ($_SERVER['REQUEST_METHOD'] == "POST")
         {
             Card::createCard($_POST);
         }
 
-        if (isset($_GET['card']))
+        $content = \app\site\modules\card\Controller::showListCard();
+
+        $this->view->generate(THEME . 'template.html', $content, $this->data);
+
+    }
+
+
+    /**
+     *Входные параметры card = hash, w = 1(получатель), 0(отправитель)
+     */
+    function card ()
+    {
+
+        if (isset($_GET['card']) && isset($_GET['w']))
         {
-            $content = \app\site\modules\card\Controller::showCard($_GET['card']);
+            $content = \app\site\modules\card\Controller::showCard($_GET['card'], $_GET['w']);
         }
+        else $content = "<h1 style='text-align: center;'>Неверная ссылка</h1>";
 
         $this->view->generate(THEME . 'template.html', $content, $this->data);
 

@@ -1,8 +1,16 @@
 <div class="card-big">
     <div class="card-big-header">
-        Ваше сообщение:
+        <span class="head">
+            <?=($who == 1)? "Вам сообщение": "Ваше сообщение";?>
+        </span>
+        <span class="state">
+            <?=($card[0]['reading'] == 1)? "Прочитано": ""?>
+        </span>
     </div>
     <div class="card-big-text">
         <?=$card[0]['text']?>
+    </div>
+    <div class="card-big-footer">
+
     </div>
 </div>
