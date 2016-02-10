@@ -13,10 +13,7 @@ class Card
 
         $res = Db::select('message', array('_hash' => $hash));
 
-        if ($res[0]['reading'] == 0 && $who == 1)
-        {
-            Db::edit('message', array('_hash' => $hash), array('reading' => 1));
-        }
+        self::setReading($res[0], $who);
 
         return $res;
     }
@@ -36,19 +33,13 @@ class Card
 
         if (!empty($ip))
         {
-
             $diff = strtotime($dt) - strtotime($ip[0]['_date']);
-
             $diff = $diff > 86400;
-
         }
         elseif (!empty($email))
         {
-
             $diff = strtotime($dt) - strtotime($email[0]['_date']);
-
             $diff = $diff > 86400;
-
         }
 
         if (empty($ip) && empty($email) && $diff)
@@ -71,20 +62,35 @@ class Card
 
     }
 
-    //TODO Функция не проверена + добавить отправление письма оправителю!!!
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+    //TODO Функция не проверена!!!
     private static function sendMail ($data)
     {
 
-        $link = PROTOCOL . $_SERVER['HTTP_HOST'] . "/card?card=" . $data['_hash'] . "&w=1";
+        $link_r = PROTOCOL . $_SERVER['HTTP_HOST'] . "/card?card=" . $data['_hash'] . "&w=1#anc";
+        $link_s = PROTOCOL . $_SERVER['HTTP_HOST'] . "/card?card=" . $data['_hash'] . "&w=0#anc";
 
         ob_start();
+        require MODULES . "card" . DIR_SEP . "html" . DIR_SEP . "card_mail_r.html";
+        $message_r = ob_get_clean();
 
-        require MODULES . "card" . DIR_SEP . "html" . DIR_SEP . "card_mail.html";
+        ob_start();
+        require MODULES . "card" . DIR_SEP . "html" . DIR_SEP . "card_mail_s.html";
+        $message_s = ob_get_clean();
 
-        $message = ob_get_clean();
-var_dump($message);
-        return SendMail::send($data['receiver'], "анонимное сообщение", $message);
+        if (SendMail::send($data['receiver'], "анонимное сообщение", $message_r) &&
+            SendMail::send($data['sender'], "анонимное сообщение", $message_s))
+            return true;
+        else return false;
 
     }
 
+    private static function setReading ($data, $who)
+    {
+        if ($data['reading'] == 0 && $who == 1)
+        {
+            Db::edit('message', array('_hash' => $data['_hash']), array('reading' => 1));
+        }
+    }
 }
