@@ -10,7 +10,7 @@ class SendMail {
         $headers = 'Content-type: text/html; charset=utf-8' . "\r\n";
 
         // Дополнительные заголовки
-        $headers .= 'From: Winner System<admin@winner-system.ru>' . "\r\n";
+        $headers .= 'From: Тайник<admin@taynik.ru>' . "\r\n";
 
         if (mail($to, $subject, $message, $headers))
         {

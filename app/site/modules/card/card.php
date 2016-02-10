@@ -82,7 +82,7 @@ class Card
         require MODULES . "card" . DIR_SEP . "html" . DIR_SEP . "card_mail.html";
 
         $message = ob_get_clean();
-
+var_dump($message);
         return SendMail::send($data['receiver'], "анонимное сообщение", $message);
 
     }

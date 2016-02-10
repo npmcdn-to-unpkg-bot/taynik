@@ -1,3 +1,38 @@
+<style>
+    #mail-content
+    {
+        width: 700px;
+        margin: 20px auto;
+        background: #f3f3f4;
+    }
+    #mail-content-header
+    {
+        padding: 20px;
+        text-align: center;
+        background: #384D66;
+        color: #fff;
+        margin: 0;
+    }
+    #mail-content-button
+    {
+        padding: 10px;
+        background: #384D66;
+        text-decoration: none;
+        color: #fff;
+    }
+    #mail-content-text
+    {
+        color: #676a76;
+        padding: 20px;
+        text-align: justify;
+        margin: 0;
+    }
+    #link-container
+    {
+        padding: 20px;
+        text-align: center;
+    }
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +40,14 @@
     <title>Вам анонимное сообщение</title>
 </head>
 <body>
-<h1>Вам пришло анонимное сообщение</h1>
-<p>Вы можете посмотреть его по ссылке <?=$link?></p>
+<div id="mail-content">
+    <h1 id="mail-content-header">Вам пришло анонимное сообщение</h1>
+    <p id="mail-content-text">
+        Вас приветствует сервис ТАЙНИК. Вам отправлено анонимное сообщение, вы можете прочитать его нажав на кнопку ниже.
+    </p>
+    <div id="link-container">
+        <a href="<?=$link?>" id="mail-content-button">Прочитать</a>
+    </div>
+</div>
 </body>
 </html>
