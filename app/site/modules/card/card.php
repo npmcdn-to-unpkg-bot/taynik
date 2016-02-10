@@ -71,7 +71,7 @@ class Card
 
     }
 
-    //TODO Функция не проверена
+    //TODO Функция не проверена + добавить отправление письма оправителю!!!
     private static function sendMail ($data)
     {
 
