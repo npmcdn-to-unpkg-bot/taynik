@@ -214,7 +214,7 @@ h4
 
 .card-big
 {
-    width: 400px;
+    width: 600px;
     border: 6px solid #676a76;
     margin: 20px auto;
 }
@@ -222,7 +222,7 @@ h4
 .card-big-text
 {
     padding: 20px;
-    font: italic normal normal 18px/1.2em droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
+    font: italic normal normal 24px/1.2em droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
     text-align: justify;
 }
 
