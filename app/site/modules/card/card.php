@@ -8,6 +8,7 @@ use system\helpers\SendMail;
 class Card
 {
 
+    //Получение одной карточки
     public static function getCard ($hash, $who)
     {
 
@@ -18,11 +19,13 @@ class Card
         return $res;
     }
 
+    //Получение списка карточек
     public static function getListCard ($start, $limit)
     {
         return Db::select('message', array('public' => 'on'), null, $start, $limit);
     }
 
+    //Отправка сообщения и создание карточки
     public static function createCard ($data)
     {
 
@@ -65,6 +68,7 @@ class Card
 //-------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
     //TODO Функция не проверена!!!
+    //Отправка сообщения по email
     private static function sendMail ($data)
     {
 
@@ -86,6 +90,7 @@ class Card
 
     }
 
+    //Ставит статус карточке "прочтено"
     private static function setReading ($data, $who)
     {
         if ($data['reading'] == 0 && $who == 1)
