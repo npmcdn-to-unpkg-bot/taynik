@@ -14,7 +14,7 @@ class Card
 
         $res = Db::select('message', array('_hash' => $hash));
 
-        self::setReading($res[0], $who);
+        if (!empty($res)) self::setReading($res[0], $who);
 
         return $res;
     }
