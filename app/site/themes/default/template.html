@@ -5,60 +5,56 @@
     <link rel="stylesheet" href="/app/site/themes/default/css/style.css">
     <title>Та'йник</title>
     <script src="/js/jQuery.js"></script>
-    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    <!--<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>-->
+    <script src="/app/site/themes/default/js/scripts.js"></script>
     <script src="/app/site/themes/default/js/load_cards.js"></script>
 </head>
 <body>
-<div id="main-wrap">
-    <header>
-        <div class="logo">
-            <h1 class="logo-text">Та'йник</h1>
-            <h3 class="slogan-text">тайные послания, признания и пожелания</h3>
-        </div>
-        <div class="center-wrap big">
-            <div id="btn-open-send">Отправить сообщение</div>
-            <div id="send-container">
-                <div id="send-wrapper">
-                    <form method="post">
-                        <span class="note-text">*Для отправки анонимного сообщения необходимо указать email получателя и ваш, для того чтобы получатель мог ответить.</span>
-                        <h4>Email получателя</h4>
-                        <input class="vertical-input" type="email" name="receiver" placeholder="email получателя" required>
-                        <h4>Ваш email</h4>
-                        <input class="vertical-input" type="email" name="sender" placeholder="ваш email" required>
-                        <h4>Текст сообщения</h4>
-                        <textarea class="vertical-input" name="text" placeholder="Текст сообщения" required></textarea>
-                        <p><label><input type="checkbox" name="public" checked>опубликовать на сайте</label></p>
-                        <button id="btn-send" class="btn">Отправить</button>
-                        <div id="btn-cancel" class="btn">Отмена</div>
-                    </form>
+    <div id="main-wrap">
+        <div id="index-page">
+            <header>
+                <div class="logo">
+                    <h1 class="logo-text">Та'йник</h1>
+                    <h3 class="slogan-text">тайные послания, признания и пожелания</h3>
                 </div>
+                <div class="center-wrap big">
+                    <div id="btn-open-send">Отправить сообщение</div>
+                    <div id="send-container">
+                        <div id="send-wrapper">
+                            <form method="post">
+                                <span class="note-text">*Для отправки анонимного сообщения необходимо указать email получателя и ваш, для того чтобы получатель мог ответить.</span>
+                                <h4>Email получателя</h4>
+                                <input class="vertical-input" type="email" name="receiver" placeholder="email получателя" required>
+                                <h4>Ваш email</h4>
+                                <input class="vertical-input" type="email" name="sender" placeholder="ваш email" required>
+                                <h4>Текст сообщения</h4>
+                                <textarea class="vertical-input" name="text" placeholder="Текст сообщения" required></textarea>
+                                <p><label><input type="checkbox" name="public" checked>опубликовать на сайте</label></p>
+                                <button id="btn-send" class="btn">Отправить</button>
+                                <div id="btn-cancel" class="btn">Отмена</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="cards-stat" class="center-wrap big">
+                <span class="decor-text1">уже отправлено</span>
+                <div id="cards-count"><?=$count_cards?></div>
+                <span class="decor-text2">взглянуть на них</span>
             </div>
-            <script>
-                $("#btn-open-send").click(function (){
-
-                    $("#send-wrapper").fadeIn(200);
-
-                });
-
-                $("#btn-cancel").click(function (){
-
-                    $("#send-wrapper").fadeOut(200);
-
-                });
-            </script>
+            <footer>
+                <h4>Хотите признаться человеку или пожелать чего-нибудь, но боитесь?
+                    С помощью данного сервиса вы можете анонимно отправить сообщение на email!</h4>
+            </footer>
+            <main>
+                <div id="content">
+                <?=$content?>
+                </div>
+            </main>
         </div>
-    </header>
-    <main>
-        <div id="cards-conteiner" class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 240 }'>
-            <?=$cards?>
-        </div>
-        <div id="content">
-            <?=$content?>
-        </div>
-    </main>
-    <footer>
-
-    </footer>
-</div>
+    </div>
+    <div id="cards-conteiner" class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 306 }'>
+        <?=$cards?>
+    </div>
 </body>
 </html>

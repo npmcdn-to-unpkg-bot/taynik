@@ -16,6 +16,7 @@ class Ctr extends Controller {
         }
 
         $this->data['cards'] = \app\site\modules\card\Controller::showListCard();
+        $this->data['count_cards'] = Card::getCountCards();
 
         $this->view->generate(THEME . 'template.html', "", $this->data);
 

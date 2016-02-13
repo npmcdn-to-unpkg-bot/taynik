@@ -1,7 +1,14 @@
 <?php if($list) foreach ($list as $card) : ?>
 <div class="card grid-item" card="<?=$card['id']?>">
-    <div class="card-header"><?=date("d F, D", strtotime($card["_date"]))?></div>
-    <div class="card-main"><?=$card["text"]?></div>
-    <div class="card-footer"></div>
+    <div class="card-lim">
+        <div class="card-header"><?=date("d F, D", strtotime($card["_date"]))?></div>
+        <div class="card-main"><?=$card["text"]["text"]?></div>
+        <div class="card-footer"></div>
+    </div>
+    <div class="card-full" style="display: none">
+        <div class="card-header"><?=date("d F, D", strtotime($card["_date"]))?></div>
+        <div class="card-main"><?=$card["full_text"]?></div>
+        <div class="card-footer"></div>
+    </div>
 </div>
 <?php endforeach ?>

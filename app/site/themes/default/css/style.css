@@ -8,6 +8,11 @@
     src: url(/app/site/themes/default/fonts/Measure.otf);
 }
 
+@font-face {
+    font-family: 'Archive';
+    src: url(/app/site/themes/default/fonts/Archive.otf);
+}
+
 html, body
 {
     padding: 0;
@@ -32,21 +37,38 @@ body
 header
 {
     text-align: center;
+    margin-bottom: 40px;
 }
 
 footer
 {
-    height: 200px;
+    height: 150px;
     background: linear-gradient(to bottom, #44464d, #41434a);
+    overflow: hidden;
 }
 
-#main-wrap
+footer h4
+{
+    color: #58b1b4;
+    font-family: Archive;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+main
+{
+    /*display: none;*/
+}
+
+#main-wrap, #cards-conteiner
 {
     width: 960px;
-    margin: 50px auto;
+    margin: 20px auto;
     box-shadow: 0 0 20px #30323d;
     background: linear-gradient(to left bottom, #51545d, #5a5e66);
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .center-wrap
@@ -83,14 +105,55 @@ footer
     cursor: default;
 }
 
-/*Секция отправки сообщения*/
-h4
+/*Секция статистики карточек*/
+#cards-stat
 {
-    font-weight: normal;
-    font-size: 1em;
-    margin: 10px 10px 5px;
-    cursor: default;
+    /*margin-top: 40px;*/
+    background: #42aba9;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: .3s;
+    color: #fff;
+    text-align: center;
 }
+
+#cards-stat:hover
+{
+    color: #BF4B48!important;
+}
+#cards-stat:hover #cards-count
+{
+    border-color: #BF4B48;
+}
+
+
+#cards-count
+{
+    text-align: center;
+    /*color: #fff;*/
+    font-size: 2em;
+    font-family: Archive;
+    border: 4px solid #fff;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 14px;
+    transition: .3s;
+}
+
+.decor-text1, .decor-text2
+{
+    /*color: #fff;*/
+    font-family: Archive;
+    font-size: 1.5em;
+    display: inline-block;
+}
+
+.decor-text2
+{
+    /*color: #fff;*/
+}
+
+/*Секция отправки сообщения*/
 
 .vertical-input
 {
@@ -107,6 +170,14 @@ h4
     width: 460px;
     position: relative;
     margin: 10px auto;
+}
+
+#send-container h4
+{
+    font-weight: normal;
+    font-size: 1em;
+    margin: 10px 10px 5px;
+    cursor: default;
 }
 
 #send-wrapper
@@ -194,21 +265,37 @@ h4
 /*******Карточки********/
 #cards-conteiner
 {
-    width: 960px;
-    margin: 20px auto;
+    /*padding: 20px;*/
+    display: none;
 }
 
 .card {
-    /*margin: 10px;*/
-    width: 240px;
+    margin: 0;
+    width: 320px;
+    height: 200px;
     color: #fff;
-    overflow: hidden;
-    /*border-radius: 8px;*/
-    background: #58b1b4;
-    box-shadow: 0 0 15px #676a76;
     float: left;
     cursor: default;
-    /*border: 6px solid #676a76;*/
+    position: relative;
+    background: #58b1b4;
+}
+
+.card-lim
+{
+    z-index: 1;
+}
+
+.card-full
+{
+    z-index: 2;
+}
+
+.card-lim, .card-full
+{
+    background: #58b1b4;
+    min-height: 100%;
+    min-width: 100%;
+    box-shadow: 0 0 15px #2f333a;
 }
 
 .card:nth-child(odd) > .card-main
@@ -231,7 +318,7 @@ h4
     font-size: .8em;
     text-align: justify;
     letter-spacing: 1px;
-    font: italic normal normal 14px/1.2em droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
+    font: italic normal bold 14px/1.2em droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
 }
 
 .card-big

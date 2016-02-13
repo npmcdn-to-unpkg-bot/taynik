@@ -25,6 +25,12 @@ class Card
         return Db::select('message', array('public' => 'on'), null, $start, $limit);
     }
 
+    //Получение количества карточек
+    public static function getCountCards ()
+    {
+        return count(Db::select('message'));
+    }
+
     //Отправка сообщения и создание карточки
     public static function createCard ($data)
     {
