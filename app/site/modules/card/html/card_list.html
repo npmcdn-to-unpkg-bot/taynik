@@ -1,5 +1,5 @@
 <?php if($list) foreach ($list as $card) : ?>
-<div class="card grid-item">
+<div class="card grid-item" card="<?=$card['id']?>">
     <div class="card-header"><?=date("d F, D", strtotime($card["_date"]))?></div>
     <div class="card-main"><?=$card["text"]?></div>
     <div class="card-footer"></div>

@@ -1,11 +1,11 @@
 //$(document).ready(function () {
 //
-//    var inProgress = false;
 //    var startFrom = 5;
 //    var scrH = $(window).height();
 //
 //    $(window).scroll(function(){
 //
+//        var inProgress = false;
 //        var scro = $(this).scrollTop();
 //        var scrHP = $("#cards-conteiner").height();
 //        var scrH2 = 0;
@@ -15,14 +15,13 @@
 //        if(leftH < 200 && !inProgress)
 //        {
 //
+//            inProgress = true;
+//
 //            $.ajax({
 //
 //                type: "POST",
 //                url: "app/site/modules/ajaxCtr.php",
-//                data : {'ajax' : true,'action' : 'loadCards', 'start' : startFrom},
-//                beforeSend: function (){
-//                    inProgress = true;
-//                }
+//                data : {'ajax' : true,'action' : 'loadCards', 'start' : startFrom}
 //
 //            }).done(function(data){
 //
