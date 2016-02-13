@@ -15,9 +15,9 @@ class Ctr extends Controller {
             Card::createCard($_POST);
         }
 
-        $content = \app\site\modules\card\Controller::showListCard();
+        $this->data['cards'] = \app\site\modules\card\Controller::showListCard();
 
-        $this->view->generate(THEME . 'template.html', $content, $this->data);
+        $this->view->generate(THEME . 'template.html', "", $this->data);
 
     }
 

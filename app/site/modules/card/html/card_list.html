@@ -1,9 +1,7 @@
-<div id="cards-conteiner" class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 320 }'>
-    <?php if($list) foreach ($list as $card) : ?>
-    <div class="card grid-item">
-        <div class="card-header"><?=date("d F, D", strtotime($card["_date"]))?></div>
-        <div class="card-main"><?=$card["text"]?></div>
-        <div class="card-footer"></div>
-    </div>
-    <?php endforeach ?>
+<?php if($list) foreach ($list as $card) : ?>
+<div class="card grid-item">
+    <div class="card-header"><?=date("d F, D", strtotime($card["_date"]))?></div>
+    <div class="card-main"><?=$card["text"]?></div>
+    <div class="card-footer"></div>
 </div>
+<?php endforeach ?>

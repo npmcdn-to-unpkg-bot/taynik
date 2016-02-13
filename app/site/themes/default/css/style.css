@@ -20,17 +20,33 @@ html
     color: #676a76;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
+    /*background: #41434a;*/
 }
 
 body
 {
-    /*background: url("/app/site/themes/default/src/bg_main.jpg") no-repeat fixed;*/
+    background: url("/app/site/themes/default/src/bg_main.jpg") no-repeat fixed;
     background-size: 100%;
 }
 
 header
 {
     text-align: center;
+}
+
+footer
+{
+    height: 200px;
+    background: linear-gradient(to bottom, #44464d, #41434a);
+}
+
+#main-wrap
+{
+    width: 960px;
+    margin: 50px auto;
+    box-shadow: 0 0 20px #30323d;
+    background: linear-gradient(to left bottom, #51545d, #5a5e66);
+    overflow: hidden;
 }
 
 .center-wrap
@@ -43,6 +59,11 @@ header
     width: 960px;
 }
 
+.logo
+{
+    color: #f3f3f4;
+}
+
 .logo-text
 {
     font-size: 14em;
@@ -50,7 +71,7 @@ header
     margin: 40px 0 0;
     font-family: BravoRG;
     padding: 0 40px;
-    border: 14px solid #676a76;
+    border: 14px solid #f3f3f4;
     cursor: default;
 }
 
@@ -92,13 +113,14 @@ h4
 {
     width: 440px;
     padding: 10px;
-    box-shadow: 0 0 15px #676a76;
+    box-shadow: 0 0 20px #30323d;
+    background: linear-gradient(to left bottom, #51545d, #5a5e66);
     display: none;
     position: absolute;
     left: 0;
     top: -400px;
     z-index: 999;
-    background: #fff;
+    color: #fff;
 }
 
 #send-wrapper textarea
@@ -128,7 +150,7 @@ h4
     font-size: 1em;
     font-weight: bold;
     cursor: pointer;
-    background: #f75b40;
+    background: #BF4B48;
     border: none;
     border-radius: 20px;
     color: #fff;
@@ -148,7 +170,8 @@ h4
     font-size: 1em;
     font-weight: bold;
     cursor: pointer;
-    background: #f75b40;
+    /*background: #f75b40;*/
+    background: #BF4B48;
     border: none;
     color: #fff;
     transition: .3s;
@@ -171,26 +194,27 @@ h4
 /*******Карточки********/
 #cards-conteiner
 {
-    width: 1280px;
+    width: 960px;
     margin: 20px auto;
 }
 
 .card {
-    margin: 10px;
-    width: 288px;
-    color: #676a76;
+    /*margin: 10px;*/
+    width: 240px;
+    color: #fff;
     overflow: hidden;
     /*border-radius: 8px;*/
-    background: #fff;
+    background: #58b1b4;
     box-shadow: 0 0 15px #676a76;
     float: left;
     cursor: default;
-    border: 6px solid #676a76;
+    /*border: 6px solid #676a76;*/
 }
 
 .card:nth-child(odd) > .card-main
 {
-    color: #39a7d7;
+    /*color: #fff;*/
+    /*background: #676a76;*/
 }
 
 .card-header
@@ -205,10 +229,8 @@ h4
 {
     padding: 20px;
     font-size: .8em;
-    /*color: #FFF;*/
     text-align: justify;
     letter-spacing: 1px;
-    /*background: radial-gradient(#583745, #41243d);*/
     font: italic normal normal 14px/1.2em droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
 }
 

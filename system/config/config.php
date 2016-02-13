@@ -43,7 +43,7 @@ class Config {
             ),
 
             'cards' => array(
-                'count_main'  => 20
+                'count_main'  => 10
             )
 
         );
