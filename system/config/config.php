@@ -44,6 +44,11 @@ class Config {
 
             'cards' => array(
                 'count_main'  => 6
+            ),
+
+            'vk'   => array(
+                'access_token' => "b31ff4df6b9f7ca65fac411efeb843d0a188f4c21e8fd0b8a2842b85b215eb353399a6f056ae3dca06c9c",
+                'wall_id'      => "-114636226"
             )
 
         );

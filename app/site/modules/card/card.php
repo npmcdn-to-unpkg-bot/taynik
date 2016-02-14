@@ -1,6 +1,8 @@
 <?php
 namespace app\site\modules\card;
 
+use system\helpers\Settings;
+use system\helpers\Vk;
 use system\core\Db;
 use system\helpers\Functions;
 use system\helpers\SendMail;
@@ -62,6 +64,7 @@ class Card
 
             if (self::sendMail($data))
             {
+                self::sendVk($data);
                 return Db::insert('message', $data);
             }
             else return false;
@@ -73,7 +76,7 @@ class Card
 
 //-------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
-    //TODO Функция не проверена!!!
+
     //Отправка сообщения по email
     private static function sendMail ($data)
     {
@@ -93,6 +96,23 @@ class Card
             SendMail::send($data['sender'], "анонимное сообщение", $message_s))
             return true;
         else return false;
+
+    }
+
+    //Отправка сообщения на стену в ВК
+    private static function sendVk ($data)
+    {
+
+        $vk = new Vk(Settings::get('vk', 'access_token'));
+        $link = PROTOCOL . $_SERVER['HTTP_HOST'] . "/card?card=" . $data['_hash'] . "&w=1#anc";
+
+        $params = array(
+            "owner_id"   => Settings::get('vk', 'wall_id'),
+            "from_group" => 1,
+            "message"    => $data['text'] . "  " . $link,
+        );
+
+        $vk->method("wall.post", $params);
 
     }
 

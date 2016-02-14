@@ -35,6 +35,8 @@ class Ctr extends Controller {
         }
         else $content = "<h1 style='text-align: center;'>Неверная ссылка</h1>";
 
+        $this->data['count_cards'] = Card::getCountCards();
+
         $this->view->generate(THEME . 'template.html', $content, $this->data);
 
     }
