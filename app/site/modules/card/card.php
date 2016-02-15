@@ -64,7 +64,7 @@ class Card
 
             if (self::sendMail($data))
             {
-                self::sendVk($data);
+                if (Settings::get('vk', 'active') && !empty($data['vk'])) self::sendVk($data);
                 return Db::insert('message', $data);
             }
             else return false;

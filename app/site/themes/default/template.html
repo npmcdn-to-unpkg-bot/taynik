@@ -23,11 +23,15 @@
                         <div id="send-wrapper">
                             <form method="post">
                                 <span class="note-text">*Для отправки анонимного сообщения необходимо указать email получателя и ваш, для того чтобы получатель мог ответить.</span>
-                                <h4>Email получателя</h4>
+                                <h4>*Email получателя</h4>
                                 <input class="vertical-input" type="email" name="receiver" placeholder="email получателя" required>
-                                <h4>Ваш email</h4>
+                                <h4>*Ваш email</h4>
                                 <input class="vertical-input" type="email" name="sender" placeholder="ваш email" required>
-                                <h4>Текст сообщения</h4>
+                                <?php if ($vk_active) :?>
+                                <h4>Идентификатор пользователя в VK получателя</h4>
+                                <input class="vertical-input" type="text" name="vk" placeholder="vk" >
+                                <?php endif ?>
+                                <h4>*Текст сообщения</h4>
                                 <textarea class="vertical-input" name="text" placeholder="Текст сообщения" required></textarea>
                                 <p><label><input type="checkbox" name="public" checked>опубликовать на сайте</label></p>
                                 <button id="btn-send" class="btn">Отправить</button>

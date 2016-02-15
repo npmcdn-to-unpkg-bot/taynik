@@ -4,6 +4,7 @@ namespace app\site;
 
 use app\site\modules\card\Card;
 use system\core\Controller;
+use system\helpers\Settings;
 
 class Ctr extends Controller {
 
@@ -17,6 +18,7 @@ class Ctr extends Controller {
 
         $this->data['cards'] = \app\site\modules\card\Controller::showListCard();
         $this->data['count_cards'] = Card::getCountCards();
+        $this->data['vk_active']   = Settings::get('vk', 'active');
 
         $this->view->generate(THEME . 'template.html', "", $this->data);
 
